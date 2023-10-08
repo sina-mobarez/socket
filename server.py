@@ -20,7 +20,7 @@ def message(sid, data):
     # response = requests.get('api url to get wheather data')
     
     response = data
-    sio.emit('response', {'message':response }, room=sid)
+    sio.emit('response', {'message':f'{response} test it works' }, room=sid)
 
 # Define an event handler for the 'disconnect' event
 @sio.on('disconnect')

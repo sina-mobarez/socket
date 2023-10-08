@@ -23,9 +23,9 @@ if __name__ == '__main__':
     sio.connect('http://localhost:8000')
 
     # Send a message to the server for example name of city
-    while True:
-        user_input = input('city name : ')
-        sio.emit('message', user_input)
+    user_input = input('city name : ')
+    sio.emit('message', user_input)
+    # Wait for events indefinitely
+    sio.wait()
 
-        # Wait for events indefinitely
-        sio.wait()
+        
